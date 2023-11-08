@@ -30,9 +30,9 @@ public class RoleTest {
 			dao.create(new Role("eeee"));
 			dao.create(new Role("tttt"));
 			*/
-			//  List<Role> roles = dao.findAll(); // Specify the return type as List<Role>
-
-		       for (Role r : dao.findAll()) {
+			 List<Role> roles = dao.findAll();
+					
+		       for (Role r : roles) {
 		           System.out.println(r.getName());
 		           System.out.println();
 		     
