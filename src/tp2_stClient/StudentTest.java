@@ -18,7 +18,7 @@ public class StudentTest {
 		jndiProperties.put(Context.PROVIDER_URL, "http-remoting://localhost:8083");
 		final Context context = new InitialContext(jndiProperties);
 
-		return (IDao<Student>) context.lookup("ejb:/tp2_studentManagement/studentService!dao.IDao");
+		return (IDao<Student>) context.lookup("ejb:tp2App/tp2_studentManagement/studentService!dao.IDao");
 		
 		
 	}
@@ -28,7 +28,7 @@ public class StudentTest {
 	    	FiliereTest filiereTest=new FiliereTest();
 	        IDao<Student> dao = lookUpStudentRemote();
 	        
-
+/*
 	        Student student1 = new Student("password1", "login1", "anas", "jeg", "0687367652");
 	       student1.setFiliere(filiereTest.lookUpFiliereRemote().findById(1));
 	        dao.create(student1);
@@ -40,9 +40,9 @@ public class StudentTest {
 	        Student student3 = new Student("password3", "login3", "aaaa", "tttt", "0623286397");
 	        student3.setFiliere(filiereTest.lookUpFiliereRemote().findById(3));
 	        dao.create(student3);
-
+*/
 	        for (Student student : dao.findAll()) {
-	            System.out.println("Name: " + student.getFirstname() + " " + student.getLastname());
+	            System.out.println("Name: " + student.getFirstname() + " " + student.getRoles()+" ");
 	            System.out.println();
 	        }
 	    } catch (NamingException e) {

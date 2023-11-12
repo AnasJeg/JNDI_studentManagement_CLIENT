@@ -19,7 +19,7 @@ public class FiliereTest {
 			jndiProperties.put(Context.PROVIDER_URL, "http-remoting://localhost:8083");
 			final Context context = new InitialContext(jndiProperties);
 
-			return (IDao<Filiere>) context.lookup("ejb:/tp2_studentManagement/filiereService!dao.IDao");
+			return (IDao<Filiere>) context.lookup("ejb:tp2App/tp2_studentManagement/filiereService!dao.IDao");
 			
 			
 		}

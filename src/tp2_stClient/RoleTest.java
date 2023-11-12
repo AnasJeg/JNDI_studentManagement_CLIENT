@@ -18,8 +18,8 @@ public class RoleTest {
 		jndiProperties.put(Context.PROVIDER_URL, "http-remoting://localhost:8083");
 		final Context context = new InitialContext(jndiProperties);
 
-		return (IDao<Role>) context.lookup("ejb:/tp2_studentManagement/roleService!dao.IDao");
-		
+		return (IDao<Role>) context.lookup("ejb:tp2App/tp2_studentManagement/roleService!dao.IDao");
+		// ejb:/tp2_studentManagement/roleService!dao.IDao
 		
 	}
 
@@ -37,6 +37,9 @@ public class RoleTest {
 		           System.out.println();
 		     
 		       }
+		       
+		       System.out.println("find ");
+		       System.out.println(dao.findById(2));
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			System.out.println("err "+e.getMessage());
